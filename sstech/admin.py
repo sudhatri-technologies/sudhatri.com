@@ -14,4 +14,4 @@ admin.site.register(Post,PostAdmin)
 
 
 #username sudhatri
-#password SriSudhatri@2022
+#password Sri@2022
