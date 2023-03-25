@@ -10,5 +10,7 @@ urlpatterns = [
     path('us-staffing',views.usStaffing,name='us'),
     path('domestic-staffing',views.domesticStaffing,name='ds'),
     path('careers',views.careers,name='careers'),
-    path('contact',views.contact,name='contact')
+    path('contact',views.contact,name='contact'),
+    path('blog',views.blog,name='blog'),
+    path('<slug:slug>/',views.blogDetail,name='blogDetail')
 ]

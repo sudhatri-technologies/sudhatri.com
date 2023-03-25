@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 
-from .models import Contact
+from .models import Contact,Post
 # Create your views here.
 def home(request):
     return render(request,'index.html')
@@ -29,10 +29,18 @@ def contact(request):
         messages.info(request,'Data Submitted Successfully')
         return redirect('contact')
 
-
-
-        
     else:
         return render(request,'contact.html')
 def careers(request):
     return render(request,'careers.html')
+
+
+def blog(request):
+    posts =Post.objects.all()
+    return render(request,'blog.html',{'posts':posts})
+
+def blogDetail(request,slug):
+    post =Post.objects.get(slug=slug)
+    posts =Post.objects.all()
+
+    return render(request,'blog-detail.html',{'post':post,'posts':posts})

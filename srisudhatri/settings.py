@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'robots',
+    'django_social_share',
     'sstech'
 ]
 SITE_ID=1

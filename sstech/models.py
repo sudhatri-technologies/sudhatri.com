@@ -6,4 +6,11 @@ class Contact(models.Model):
     email=models.EmailField()
     phoneNumber=models.IntegerField()
     message=models.TextField()
+
+class Post(models.Model):
+    title=models.CharField(max_length=500)
+    slug=models.SlugField(max_length=500)
+    date_added=models.DateTimeField(auto_now_add=True)
+    image=models.ImageField(upload_to="static/images/blogimages")
+    body=models.TextField()
     
