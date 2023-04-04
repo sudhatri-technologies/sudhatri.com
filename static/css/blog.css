@@ -105,3 +105,15 @@
     text-align:justify;
 }
 
+
+.fa-angle-double-left,.fa-angle-double-right{
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    padding: 8px;
+    color: #000;
+    margin-right: 10px;
+}
+
+.fa-angle-double-right{
+    margin-left:10px;
+}

@@ -4,7 +4,7 @@
 
 {% load social_share %}
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 {% endblock %}
 {% block content %}
 <div class="container  mt-5">
@@ -27,9 +27,12 @@
                         <h1>{{post.title}}</h1>
                         <p>Posted at {{post.date_added}}</p>
                         <p class="mb-3">{{post.body}}</p>
+                        
+                        
+                        
                     </div>
 
-                    <hr>
+                    <hr />
 
 
                     <ul>
@@ -52,6 +55,8 @@
 
 
                     </ul>
+                    <hr />
+                    <p>For More Information, visit us @ <a href="https://www.sudhatri.in/"><b>&nbsp;www.sudhatri.in</b></a></p>
 
 
 
@@ -89,7 +94,25 @@
 
 
                 </div>
+
+
+                <div class="text-center">
+                    {% if posts.has_previous %}
+                    <!-- <a href="?page=1">First</a> -->
+                    <a href="?page={{posts.previous_page_number}}"><i class="fa fa-angle-double-left"></i></a>
+                    {% endif %}
+
+
+                    Page {{posts.number}} of {{posts.paginator.num_pages}}
+
+                    {% if posts.has_next %}
+                    <a href="?page={{posts.next_page_number}}"><i class="fa fa-angle-double-right"></i></a>
+                    <!-- <a href="?page={{posts.paginator.num_pages}}">Last</a> -->
+                    {% endif %}
+                </div>
             </div>
+
+
 
 
         </div>

@@ -5,7 +5,7 @@
 {% load social_share %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -22,29 +22,29 @@
                     <div class="content">
                         <h3><a href="{% url 'blogDetail' post.slug %}">{{post.title}}</a></h3>
 
-                         <h6>{{post.title}}</h6>
-                            <p class="date"> {{post.date_added}}</p>
+                        <h6>{{post.title}}</h6>
+                        <p class="date"> {{post.date_added}}</p>
                     </div>
 
                     <ul class="blogicons">
                         <li>
-                            {% post_to_whatsapp object_or_url  '<i class="fab fa-whatsapp"></i>' %}
-                        </li>
-                    
-                        <li>
-                            {% post_to_facebook object_or_url  '<i class="fab fa-facebook-f"></i>' %}
-                        </li>
-                        <li>
-                            {% post_to_twitter object_or_url  %}
-                        </li>
-                        
-                        <li>
-                            {% post_to_linkedin object_or_url  %}
+                            {% post_to_whatsapp object_or_url '<i class="fab fa-whatsapp"></i>' %}
                         </li>
 
-                        
-                        
-                       
+                        <li>
+                            {% post_to_facebook object_or_url '<i class="fab fa-facebook-f"></i>' %}
+                        </li>
+                        <li>
+                            {% post_to_twitter object_or_url %}
+                        </li>
+
+                        <li>
+                            {% post_to_linkedin object_or_url %}
+                        </li>
+
+
+
+
                     </ul>
                 </div>
             </div>
@@ -57,5 +57,27 @@
     </div>
 </div>
 
+<!-- {{posts}}<br>
+Has Previous : {{posts.has_previous}}<br>
+Has Next : {{posts.has_next}}<br>
+Current Page : {{posts.number}} <br>
+No of Pages : {{posts.paginator.num_pages}}<br><br> -->
+
+
+
+<div class="text-center">
+    {% if posts.has_previous %}
+    <!-- <a href="?page=1">First</a> -->
+    <a href="?page={{posts.previous_page_number}}"><i class="fa fa-angle-double-left"></i></a>
+    {% endif %}
+
+
+    Page {{posts.number}} of {{posts.paginator.num_pages}}
+
+    {% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}"><i class="fa fa-angle-double-right"></i></a>
+    <!-- <a href="?page={{posts.paginator.num_pages}}">Last</a> -->
+    {% endif %}
+</div>
 
 {% endblock content %}

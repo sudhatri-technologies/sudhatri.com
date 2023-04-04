@@ -35,12 +35,21 @@ def careers(request):
     return render(request,'careers.html')
 
 
+#Import Pagination Stuff
+from django.core.paginator import Paginator
 def blog(request):
-    posts =Post.objects.all()
+    # Set Up Pagination
+    p = Paginator(Post.objects.all(),4)
+    page = request.GET.get('page')
+    posts=p.get_page(page)
     return render(request,'blog.html',{'posts':posts})
 
 def blogDetail(request,slug):
     post =Post.objects.get(slug=slug)
-    posts =Post.objects.all()
+    
 
+    # Set Up Pagination
+    p = Paginator(Post.objects.all(),6)
+    page = request.GET.get('page')
+    posts=p.get_page(page)
     return render(request,'blog-detail.html',{'post':post,'posts':posts})
