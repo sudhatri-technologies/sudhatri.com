@@ -79,12 +79,25 @@ WSGI_APPLICATION = 'srisudhatri.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME'  : 'sudhatri',
+#         'USER'  : 'root',
+#         'PASSWORD':'root'
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME'  : 'sudhatri$mysqltestdb',
+        'USER'  : 'sudhatri',
+        'PASSWORD':'sstechin@2022',
+        'HOST': 'sudhatri.mysql.pythonanywhere-services.com',
+
     }
 }
+
 
 
 # Password validation

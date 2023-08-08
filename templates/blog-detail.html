@@ -27,9 +27,9 @@
                         <h1>{{post.title}}</h1>
                         <p>Posted at {{post.date_added}}</p>
                         <p class="mb-3">{{post.body}}</p>
-                        
-                        
-                        
+
+
+
                     </div>
 
                     <hr />
@@ -44,19 +44,20 @@
                             {% post_to_facebook object_or_url '<i class="fab fa-facebook-f"></i>' %}
                         </li>
                         <li>
-                            {% post_to_twitter object_or_url %}
+                            {% post_to_telegram "" object_or_url '<i class="fab fa-telegram-plane"></i>' %}
+
                         </li>
 
                         <li>
                             {% post_to_linkedin object_or_url %}
+
+
                         </li>
-
-
-
 
                     </ul>
                     <hr />
-                    <p>For More Information, visit us @ <a href="https://www.sudhatri.in/"><b>&nbsp;www.sudhatri.in</b></a></p>
+                    <p>For More Information, visit us @ <a
+                            href="https://www.sudhatri.in/"><b>&nbsp;www.sudhatri.in</b></a></p>
 
 
 
@@ -119,4 +120,8 @@
 
     </div>
 </div>
+
+{% post_to_twitter object_or_url "Post to Twitter" %}
+
+
 {% endblock content %}

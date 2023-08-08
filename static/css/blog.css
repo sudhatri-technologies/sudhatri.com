@@ -79,9 +79,7 @@
 .blogicons .fa-instagram{
     color: #e200cf
 }
-.fa-linkedin-in{
-    color:#0e76a8;
-}
+
 .fa-whatsapp{
     color:#4AC959;
 }
@@ -90,16 +88,11 @@
     bottom:55px;
     margin-bottom:20px;
 }
+.linkedin-this{
+    font-size:5px;
+}
 
 
-/* .footer{
-    color: #fff;
-    background: #2d2d2e;
-    padding:2px;
-    margin-top:50px;
-    
-    
-} */
 
 .card-body p{
     text-align:justify;

@@ -13,5 +13,5 @@ class PostAdmin(admin.ModelAdmin):
 admin.site.register(Post,PostAdmin)
 
 
-#username sudhatri
+#username srisudhatri
 #password Sri@2022
